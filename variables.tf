@@ -109,3 +109,31 @@ variable "allowed_ips" {
 variable "network_security_group_id" {
   type = string
 }
+
+variable "priority" {
+  type = string
+}
+
+variable "eviction_policy" {
+  type = string
+}
+
+variable "max_bid_price" {
+  type = string
+}
+
+variable "overprovision" {
+  type = string
+}
+
+variable "ultra_ssd_enabled" {
+  type = string
+}
+
+variable "scale_in_rule" {
+  type = string
+}
+
+variable "scale_in_force_deletion_enabled" {
+  type = string
+}
