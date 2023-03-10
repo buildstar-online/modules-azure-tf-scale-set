@@ -34,7 +34,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   resource_group_name             = var.resource_group
   location                        = var.location
   sku                             = var.vm_sku
-  instances                       = var.instances
+  instances                       = var.vm_instances
   admin_username                  = var.vm_admin_username
   admin_password                  = random_password.vm_admin_password.result
   #allow_extension_operations     = false
