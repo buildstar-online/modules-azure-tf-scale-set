@@ -94,6 +94,14 @@ variable "vm_net_iface_private_ip_address_allocation" {
   type = string
 }
 
+variable "vm_os_disk_caching" {
+  type = string
+}
+
+variable "vm_os_disk_size_gb" {
+  type = string
+}
+
 variable "vnet_name" {
   type = string
 }
