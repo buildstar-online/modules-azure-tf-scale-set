@@ -94,11 +94,11 @@ variable "vm_net_iface_private_ip_address_allocation" {
   type = string
 }
 
-variable "vm_os_disk_caching" {
+variable "vm_disk_caching" {
   type = string
 }
 
-variable "vm_os_disk_size_gb" {
+variable "vm_disk_size_gb" {
   type = string
 }
 
