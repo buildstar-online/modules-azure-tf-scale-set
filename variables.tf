@@ -82,6 +82,14 @@ variable "vm_net_iface_name" {
   type = string
 }
 
+variable "vm_net_iface_ipconfig_name" {
+  type = string
+}
+
+variable "vm_net_iface_private_ip_address_allocation" {
+  type = string
+}
+
 variable "vnet_name" {
   type = string
 }
