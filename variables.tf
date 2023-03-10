@@ -71,7 +71,7 @@ variable "storage_account_url" {
 }
 
 variable "admin_users" {
-  type = string
+  type = list(string)
 }
 
 variable "vnet_subnet_name" {
