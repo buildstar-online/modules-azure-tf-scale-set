@@ -1,5 +1,5 @@
 data "template_file" "cloudconfig" {
-  template = "${file("${path.module}/cloud-init.txt")}"
+  template = "${file("${var.cloud-init-path}")}"
 }
 
 data "template_cloudinit_config" "config" {
