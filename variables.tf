@@ -42,10 +42,6 @@ variable "vm_network_interface" {
   type = string
 }
 
-variable "vm_disk_caching" {
-  type = string
-}
-
 variable "vm_storage_account_type" {
   type = string
 }
