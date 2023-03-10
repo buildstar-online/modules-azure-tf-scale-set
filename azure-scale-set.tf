@@ -21,7 +21,7 @@ resource "azurerm_key_vault_secret" "vm_admin_password" {
   name         = "${var.environment}vmadmin"
   value        = "${random_password.vm_admin_password.result}"
   content_type = "text/plain"
-  key_vault_id = var.kv_id
+  key_vault_id = var.keyvault_id
 }
 
 resource "azurerm_linux_virtual_machine_scale_set" "virtual_machine" {
