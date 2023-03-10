@@ -78,6 +78,10 @@ variable "vnet_subnet_name" {
   type = string
 }
 
+variable "vm_net_iface_name" {
+  type = string
+}
+
 variable "vnet_name" {
   type = string
 }
