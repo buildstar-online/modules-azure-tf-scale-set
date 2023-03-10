@@ -95,7 +95,7 @@ variable "vnet_name" {
 }
 
 variable "subnet_prefixes" {
-  type = string
+  type = list(string)
 }
 
 variable "allowed_ips" {
