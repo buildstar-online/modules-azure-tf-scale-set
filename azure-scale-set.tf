@@ -87,15 +87,6 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
     write_accelerator_enabled = false
   }
 
-  data_disk {
-    caching                   = "ReadWrite"
-    create_option             = "Empty"
-    disk_size_gb              = "32"
-    lun                       = "1"
-    storage_account_type      = "Standard_LRS"
-    write_accelerator_enabled = false
-  }
-
   source_image_reference {
     publisher = var.vm_source_image_publisher
     offer     = var.vm_source_image_offer
