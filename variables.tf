@@ -18,10 +18,6 @@ variable "location" {
   type = string
 }
 
-variable "kv_id" {
-  type = string
-}
-
 variable "vm_sku" {
   type = string
 }
