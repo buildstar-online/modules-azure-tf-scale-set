@@ -99,7 +99,7 @@ variable "subnet_prefixes" {
 }
 
 variable "allowed_ips" {
-  type = string
+  type = list(string)
 }
 
 variable "network_security_group_id" {
