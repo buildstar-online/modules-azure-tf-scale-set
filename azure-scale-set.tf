@@ -12,20 +12,25 @@ data "template_cloudinit_config" "config" {
   }
 }
 
+resource "random_pet" "vm_name" {
+  length = 2
+  separator = "x"
+}
+
 resource "random_password" "vm_admin_password" {
   length  = 16
   special = false
 }
 
 resource "azurerm_key_vault_secret" "vm_admin_password" {
-  name         = "${var.environment}vmadmin"
+  name         = random_pet.vm_name.id
   value        = "${random_password.vm_admin_password.result}"
   content_type = "text/plain"
   key_vault_id = var.keyvault_id
 }
 
-resource "azurerm_linux_virtual_machine_scale_set" "virtual_machine" {
-  name                            = "${var.environment}-${var.vm_name}"
+resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
+  name                            = "${var.environment}-scale-set"
   resource_group_name             = var.resource_group
   location                        = var.location
   sku                             = var.vm_size
