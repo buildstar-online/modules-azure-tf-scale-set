@@ -1,7 +1,7 @@
 resource "azurerm_subnet" "vm_subnet" {
-  name                 = "vm${var.vnet_subnet_name}"
+  name                 = "${var.vnet_subnet_name}"
   resource_group_name  = var.resource_group
-  virtual_network_name = "${var.environment}-${var.vnet_name}"
+  virtual_network_name = "${var.vnet_name}"
   address_prefixes     = var.subnet_prefixes
 }
 
@@ -11,7 +11,7 @@ resource "azurerm_network_security_group" "vm_security_group" {
   resource_group_name = var.resource_group
 }
 
-resource "azurerm_network_security_rule" "example" {
+resource "azurerm_network_security_rule" "ssh" {
   name                        = "SSH"
   priority                    = 1001
   direction                   = "Inbound"
