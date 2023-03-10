@@ -34,7 +34,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   resource_group_name             = var.resource_group
   location                        = var.location
   sku                             = var.vm_sku
-  instances                       = 1
+  instances                       = var.instances
   admin_username                  = var.vm_admin_username
   admin_password                  = random_password.vm_admin_password.result
   #allow_extension_operations     = false
@@ -42,6 +42,21 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
 
   # this is the cloud-init data
   custom_data = "${data.template_cloudinit_config.config.rendered}"
+  
+  # Spot bids
+  priority = var.priority
+  eviction_policy = var.eviction_policy
+  max_bid_price = var.max_bid_price
+  overprovision = var.overprovision
+  
+  additional_capabilities {
+    ultra_ssd_enabled = var.ultra_ssd_enabled
+  }
+  
+  scale_in {
+    rule = var.scale_in_rule
+    force_deletion_enabled = var.scale_in_force_deletion_enabled
+  }
 
   network_interface {
     name = var.vm_net_iface_name
@@ -59,7 +74,6 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
         name = "vmpip"
       }
     }
-
   }
 
   os_disk {
