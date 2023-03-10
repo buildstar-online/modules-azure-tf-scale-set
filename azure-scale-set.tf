@@ -63,9 +63,9 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   }
 
   os_disk {
-    caching              = var.vm_os_disk_caching
+    caching              = var.vm_disk_caching
     storage_account_type = var.vm_storage_account_type
-    disk_size_gb         = var.vm_os_disk_size_gb
+    disk_size_gb         = var.vm_disk_size_gb
     write_accelerator_enabled = false
   }
 
