@@ -19,7 +19,11 @@ resource "random_pet" "vm_name" {
 
 resource "random_password" "vm_admin_password" {
   length  = 16
-  special = false
+  min_lower = 1
+  min_upper = 1
+  min_numeric = 1
+  special = true
+  override_special = "!#&*()-_=+[]{}<>"
 }
 
 resource "azurerm_key_vault_secret" "vm_admin_password" {
