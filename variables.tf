@@ -46,10 +46,6 @@ variable "vm_storage_account_type" {
   type = string
 }
 
-variable "vm_disk_size" {
-  type = string
-}
-
 variable "vm_source_image_publisher" {
   type = string
 }
