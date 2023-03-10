@@ -33,13 +33,12 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   name                            = "${var.environment}-scale-set"
   resource_group_name             = var.resource_group
   location                        = var.location
-  sku                             = var.vm_size
+  sku                             = var.vm_sku
   instances                       = 1
   admin_username                  = var.vm_admin_username
   admin_password                  = random_password.vm_admin_password.result
   #allow_extension_operations     = false
   disable_password_authentication = false
-  computer_name_prefix            = var.vm_computer_name
 
   # this is the cloud-init data
   custom_data = "${data.template_cloudinit_config.config.rendered}"
