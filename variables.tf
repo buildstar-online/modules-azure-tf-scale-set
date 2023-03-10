@@ -2,6 +2,10 @@ variable "environment" {
   type = string
 }
 
+variable "cloud-init-path" {
+  type = string
+}
+
 variable "keyvault_id" {
   type = string
 }
