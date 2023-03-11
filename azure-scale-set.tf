@@ -52,6 +52,11 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   eviction_policy = var.eviction_policy
   max_bid_price   = var.max_bid_price
   overprovision   = var.overprovision
+  
+  spot_restore {
+    enabled = var.spot_restore_enabled
+    timeout = var.spot_restore_timeout
+  }
 
   additional_capabilities {
     ultra_ssd_enabled = var.ultra_ssd_enabled
