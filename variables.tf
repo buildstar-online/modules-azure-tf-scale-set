@@ -137,3 +137,12 @@ variable "scale_in_rule" {
 variable "scale_in_force_deletion_enabled" {
   type = string
 }
+
+variable "spot_restore_enabled" {
+  type = string
+}
+
+variable "spot_restore_timeout" {
+  type = string
+}
+
