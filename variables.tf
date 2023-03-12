@@ -42,10 +42,6 @@ variable "vm_network_interface" {
   type = string
 }
 
-variable "vm_storage_account_type" {
-  type = string
-}
-
 variable "vm_source_image_publisher" {
   type = string
 }
