@@ -94,10 +94,6 @@ variable "vm_os_disk_size_gb" {
   type = string
 }
 
-variable "vm_os_disk_size_gb" {
-  type = string
-}
-
 variable "vm_os_storage_account_type" {
   type = string
 }
@@ -107,10 +103,6 @@ variable "vm_os_disk_write_accelerator_enabled" {
 }
 
 variable "vm_data_disk_caching" {
-  type = string
-}
-
-variable "vm_data_disk_size_gb" {
   type = string
 }
 
