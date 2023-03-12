@@ -5,8 +5,8 @@ resource "azurerm_subnet" "vm_subnet" {
   address_prefixes     = var.subnet_prefixes
 }
 
-resource "azurerm_network_security_group" "vm_security_group" {
-  name                = "VmNetworkSecurityGroup"
+resource "azurerm_network_security_group" "scaleset_security_group" {
+  name                = "ScaleSet-NetSec"
   location            = var.location
   resource_group_name = var.resource_group
 }
@@ -22,5 +22,5 @@ resource "azurerm_network_security_rule" "ssh" {
   source_address_prefixes     = var.allowed_ips
   destination_address_prefix  = "*"
   resource_group_name         = var.resource_group
-  network_security_group_name = azurerm_network_security_group.vm_security_group.name
+  network_security_group_name = azurerm_network_security_group.scaleset_security_group.name
 }
