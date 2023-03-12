@@ -86,12 +86,22 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   }
 
   os_disk {
-    caching                   = var.vm_disk_caching
-    storage_account_type      = var.vm_storage_account_type
-    disk_size_gb              = var.vm_disk_size_gb
-    write_accelerator_enabled = false
+    caching                   = var.vm_os_disk_caching
+    storage_account_type      = var.vm_os_storage_account_type
+    disk_size_gb              = var.vm_os_disk_size_gb
+    write_accelerator_enabled = var.vm_os_disk_write_accelerator_enabled
   }
 
+  data_disk {
+    caching       = var.vm_data_disk_caching
+    create_option = var.vm_data_disk_create_option
+    disk_size_gb  = var.vm_data_disk_disk_size_gb
+    lun           = "1"
+    storage_account_type = var.vm_data_disk_storage_account_type
+    write_accelerator_enabled = var.vm_data_disk_write_accelerator_enabled
+  }
+
+  
   source_image_reference {
     publisher = var.vm_source_image_publisher
     offer     = var.vm_source_image_offer
