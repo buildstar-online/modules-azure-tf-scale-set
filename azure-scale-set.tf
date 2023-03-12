@@ -37,6 +37,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   name                = "${var.environment}-scale-set"
   resource_group_name = var.resource_group
   location            = var.location
+  zones               = [ "1", "2", "3" ]
   sku                 = var.vm_sku
   instances           = var.vm_instances
   admin_username      = var.vm_admin_username
