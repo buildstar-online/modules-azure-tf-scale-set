@@ -3,6 +3,8 @@ resource "azurerm_subnet" "vm_subnet" {
   resource_group_name  = var.resource_group
   virtual_network_name = "${var.vnet_name}"
   address_prefixes     = var.subnet_prefixes
+  private_link_service_network_policies_enabled = true
+  service_endpoints    = [ "Microsoft.Storage" ]
 }
 
 resource "azurerm_network_security_group" "scaleset_security_group" {
