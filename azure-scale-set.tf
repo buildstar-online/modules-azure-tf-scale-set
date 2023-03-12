@@ -97,7 +97,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
     create_option = var.vm_data_disk_create_option
     disk_size_gb  = var.vm_data_disk_disk_size_gb
     lun           = "1"
-    storage_account_type = var.vm_data_disk_storage_account_type
+    storage_account_type = var.vm_data_storage_account_type
     write_accelerator_enabled = var.vm_data_disk_write_accelerator_enabled
   }
 
