@@ -106,10 +106,6 @@ variable "allowed_ips" {
   type = list(string)
 }
 
-variable "network_security_group_id" {
-  type = string
-}
-
 variable "priority" {
   type = string
 }
