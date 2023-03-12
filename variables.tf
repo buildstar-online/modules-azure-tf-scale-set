@@ -86,11 +86,47 @@ variable "vm_net_iface_private_ip_address_allocation" {
   type = string
 }
 
-variable "vm_disk_caching" {
+variable "vm_os_disk_caching" {
   type = string
 }
 
-variable "vm_disk_size_gb" {
+variable "vm_os_disk_size_gb" {
+  type = string
+}
+
+variable "vm_os_disk_size_gb" {
+  type = string
+}
+
+variable "vm_os_storage_account_type" {
+  type = string
+}
+
+variable "vm_os_disk_write_accelerator_enabled" {
+  type = string
+}
+
+variable "vm_data_disk_caching" {
+  type = string
+}
+
+variable "vm_data_disk_size_gb" {
+  type = string
+}
+
+variable "vm_data_disk_size_gb" {
+  type = string
+}
+
+variable "vm_data_storage_account_type" {
+  type = string
+}
+
+variable "vm_data_disk_write_accelerator_enabled" {
+  type = string
+}
+
+variable "vm_data_disk_create_option" {
   type = string
 }
 
