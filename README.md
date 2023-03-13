@@ -1,5 +1,10 @@
-# modules-azure-tf-scale-set
-basic azure scale set module using cloud-init
+# Azure VM Scale-Set
+
+A terraform module to create an Azure Scale-Set using Spot VMs with GPUs. Designed for use with this [azure-tf-starter](https://github.com/cloudymax/azure-tf-starter) guide.
+
+## About
+
+Azure Scale-Sets are load-ballanced pools of identical VMs that can be manually or automatically scaled horizontally uo to 1000 VMs or down to 0. This is ideal for workloads with inconsistant
 
 ## Usage
 
