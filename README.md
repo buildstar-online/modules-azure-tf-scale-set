@@ -89,6 +89,7 @@ module "scale-set" {
   vm_net_iface_private_ip_address_allocation = "Dynamic"
   
 }
+```
 
 - The terraform documentation for `azurerm_linux_virtual_machine_scale_set` can be found [here](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set).
 
