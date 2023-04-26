@@ -8,7 +8,7 @@ data "template_cloudinit_config" "config" {
 
   part {
     content_type = "text/cloud-config"
-    content      = data.template_file.cloudconfig.rendered
+    content      = sensitive(data.template_file.cloudconfig.rendered)
   }
 }
 
@@ -46,7 +46,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   disable_password_authentication = false
 
   # this is the cloud-init data
-  custom_data = data.template_cloudinit_config.config.rendered
+  custom_data = sensitive(data.template_cloudinit_config.config.rendered)
 
   # Spot bids
   priority        = var.priority
