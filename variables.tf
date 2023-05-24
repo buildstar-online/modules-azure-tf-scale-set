@@ -127,7 +127,7 @@ variable "subnet_prefixes" {
 }
 
 variable "allowed_ips" {
-  type = list(string)
+  type = string
 }
 
 variable "priority" {
