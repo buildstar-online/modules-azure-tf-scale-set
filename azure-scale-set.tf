@@ -53,10 +53,13 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   eviction_policy = var.eviction_policy == "" ? null : var.eviction_policy
   max_bid_price   = var.max_bid_price == "" ? null : var.max_bid_price
   overprovision   = var.overprovision == "" ? null : var.overprovision
-  
-  spot_restore {
-    enabled = var.spot_restore_enabled == "" ? null : var.spot_restore_enabled
-    timeout = var.spot_restore_timeout == "" ? null : var.spot_restore_timeout
+
+  dynamic "spot_restore" {
+    for_each = var.spot_restore_enabled == null ? [] : [1]
+    content {
+      enabled    = var.spot_restore_enabled
+      timeout    = var.spot_restore_timeout
+    }
   }
 
   additional_capabilities {
