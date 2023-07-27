@@ -18,6 +18,13 @@ Once you know what instance type you're looking for, you can check the current s
   >    --output table
   >  ```
 
+## Find an OS Image
+
+```bash
+az vm image list --all \
+    --publisher Canonical \
+    --query "[?contains(sku,'22_04-daily-lts-gen2')].{version:version,sku:sku,architecture:architecture}" --output table
+```
 
 ## Module Usage
 
