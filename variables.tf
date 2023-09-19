@@ -2,7 +2,7 @@ variable "environment" {
   type = string
 }
 
-variable "cloud_init_path" {
+variable "user_data_path" {
   type = string
 }
 
