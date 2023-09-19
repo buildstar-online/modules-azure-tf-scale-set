@@ -129,7 +129,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   }
 
   depends_on = [
-    data.template_cloudinit_config.config
+    data.template_file.this
   ]
 
 }
