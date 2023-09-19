@@ -166,3 +166,18 @@ variable "spot_restore_timeout" {
   type = string
 }
 
+variable "username" {
+  type    = string
+  default = "friend"
+}
+
+variable "github_username" {
+  type    = string
+  default = ""
+}
+
+variable "hostname" {
+  type    = string
+  default = "azurespot"
+}
+
