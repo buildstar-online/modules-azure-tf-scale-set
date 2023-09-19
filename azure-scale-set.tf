@@ -1,8 +1,4 @@
-data "template_file" "cloudconfig" {
-  template = file("${var.user_data_path}")
-}
-
-data template_file "this" {
+data "template_file" "this" {
   template = file("${var.user_data_path}")
 
   vars = {
@@ -46,7 +42,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
   disable_password_authentication = false
 
   # this is the cloud-init data
-  custom_data = sensitive(data.template_file.this.rendered)
+  custom_data = sensitive(base64encode(data.template_file.this.rendered))
 
   # Spot bids
   priority        = var.priority == "" ? null : var.priority
