@@ -6,6 +6,12 @@ data "template_cloudinit_config" "config" {
   gzip          = false
   base64_encode = false
 
+  vars = {
+    HOSTNAME               = var.hostname
+    USERNAME               = var.username
+    GITHUB_USERNAME        = var.github_username
+  }
+
   part {
     content_type = "text/cloud-config"
     content      = data.template_file.cloudconfig.rendered
