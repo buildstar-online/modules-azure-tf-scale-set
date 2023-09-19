@@ -71,7 +71,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "scale_set" {
     name                          = var.vm_net_iface_name
     enable_accelerated_networking = false
     enable_ip_forwarding          = true
-    network_security_group_id     = azurerm_network_security_group.scaleset_security_group.id
+    network_security_group_id     = azurerm_network_security_group.security_group.id
     primary                       = true
 
     ip_configuration {
